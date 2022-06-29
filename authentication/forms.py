@@ -5,10 +5,7 @@ from django.core import validators
 
 
 
-# validarors
-def lengthcount(value):
-    if len(str(value)) < 10:
-            return forms.ValidationError('enter a valid mobile number')
+
 
 # This class is for usercreation
 class singupform(UserCreationForm):
@@ -27,13 +24,6 @@ class singupform(UserCreationForm):
         }
 
 
-    def clean_mobile(self):
-        mobil = self.cleaned_data['mobile']
-        print('---------------',mobil)
-        print('---------------',type(mobil))
-        if len(str(mobil)) < 10:
-            return ValidationError('enter a valid mobile number')
-        return mobil
 
 
 
